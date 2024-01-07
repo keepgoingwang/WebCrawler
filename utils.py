@@ -68,7 +68,7 @@ class Pages():
                 for key, pattern in match.items():
                     elements = re.findall(pattern, url_response.decode('utf-8'))
                     if elemenets:
-                        data_dict[key] = data_dict.get(key, []) + matches
+                        data_dict[key] = data_dict.get(key, []) + elemenets
 
         return data_dict
 
