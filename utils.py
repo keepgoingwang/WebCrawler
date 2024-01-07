@@ -39,30 +39,37 @@ class Pages():
         return response.content
 
     def get_elements_by_xpath(self, match:str or dict):
+        '''xpath'''
         data_dict = {}
-
         for url_response in self.responses:
             tree = html.fromstring(url_response)
 
             if isinstance(match, str):
                 elements = tree.xpath(match)
-                data_dict[elements] = data_dict.get(elements, []) + elements
+                if elements:
+                    data_dict["elements"] = data_dict.get(elements, []) + elements
             elif isinstance(match, dict):
                 for key, xpath in match.items():
                     elements = tree.xpath(xpath)
-                    data_dict[key] = data_dict.get(key, []) + elements
+                    if elements:
+                        data_dict[key] = data_dict.get(key, []) + elements
 
         return data_dict
 
     def get_elements_by_re(self, match:str or dict):
+        '''re'''
         data_dict = {}
-
         for url_response in self.responses:
-            for key, pattern in match.items():
-                matches = re.findall(pattern, url_response.decode('utf-8'))
-                data_dict[key] = data_dict.get(key, []) + matches
+            if isinstance(match, str):
+                elements = re.findall(match, url_response.decode('utf-8'))
+                if elements:
+                    data_dict[key] = data_dict.get(key, []) + elements
+            if isinstance(match, dict):
+                for key, pattern in match.items():
+                    elements = re.findall(pattern, url_response.decode('utf-8'))
+                    if elemenets:
+                        data_dict[key] = data_dict.get(key, []) + matches
 
         return data_dict
-
 
 
