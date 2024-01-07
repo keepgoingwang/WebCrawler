@@ -73,3 +73,20 @@ class Pages():
         return data_dict
 
 
+def save_csv(data, col_names=None, save_path=""):
+    if col_names is None:
+        df = pd.DataFrame.from_dict(data)
+    else:
+        if len(col_names) != len(data.keys()):
+            raise ValueError("Number of column names provided does not match the number of keys in the dictionary.")
+        
+        df = pd.DataFrame(data, columns=col_names)
+
+    if save_path:
+        file_path = save_path + "results.csv"
+    else:
+        file_path = "results.csv"
+
+    df.to_csv(file_path, index=False, encoding="utf-8")
+    print(f"CSV file '{file_path}' has been created.")
+
