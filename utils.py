@@ -7,7 +7,7 @@ import re
 import os
 
 import requests
-from lxml import html
+from lxml import html,etree
 import random
 
 class Pages():
@@ -34,22 +34,27 @@ class Pages():
 
     def _get_page(self, url):
         proxy = random.choice(self.proxies) if self.proxies else None
-        response = requests.get(url, proxies={'http': proxy, 'https': proxy})
+        if proxy:
+            response = requests.get(url, proxies={'http': proxy, 'https': proxy})
+        else:
+            response = requests.get(url)
+        print(response.status_code)
         response.raise_for_status()
-        return response.content
+        return response
 
     def get_elements_by_xpath(self, match:str or dict):
         '''xpath'''
         data_dict = {}
         for url_response in self.responses:
-            tree = html.fromstring(url_response)
-
+            tree = html.fromstring(url_response.content)
+            # tree = etree.HTML(url_response.text)
             if isinstance(match, str):
                 elements = tree.xpath(match)
                 if elements:
                     data_dict["elements"] = data_dict.get(elements, []) + elements
             elif isinstance(match, dict):
                 for key, xpath in match.items():
+                    print(xpath)
                     elements = tree.xpath(xpath)
                     if elements:
                         data_dict[key] = data_dict.get(key, []) + elements
