@@ -10,6 +10,7 @@ import pandas as pd
 
 def main(areas):
 	
+	# 读取本地临时文件夹,是否已存在房屋信息的json
 	try:
 		with open(r".\tmps\detail_urls.json", 'r') as f:
 			level_two_urls = json.load(f)
@@ -20,8 +21,10 @@ def main(areas):
 	headers = {
 		"User-Agent": "Mozilla/5.0",
 		}
+	
+	# 获取每个区域对应的所有房源url
 	if step1:
-		# 获取每个区域对应的所有房源url
+		
 		print("step 1 >>>>>>")
 		home_url = r"https://xz.lianjia.com" # https://xz.lianjia.com/zufang/tongshanqu/pg1
 		level_one_urls = {}
@@ -29,7 +32,7 @@ def main(areas):
 			level_one_urls[area_name] = [ str(home_url + str("/zufang/") + str(area_name) + str("/pg") + str(page)) for page in range(1, int(pages+1))]
 			# print(f"{area_name}有{len(level_one_urls[area_name])}页数据")
 
-		# 获取每套房源对应的具体ur
+		# 获取每套房源对应的具体url
 		level_two_urls = {}
 		for a_name, urls in level_one_urls.items():
 			page = Pages(urls=urls, headers=headers)
@@ -50,10 +53,11 @@ def main(areas):
 		with open(r".\tmps\detail_urls.json", "w", encoding='utf-8') as f:
 			json.dump(level_two_urls, f, default=str)
 
-	# 获取每个区域每套房源具体信息
+	# 获取每个区域每套房源的具体信息
 	if 1 == 0:
 		print("step 2 >>>>>>")
 		all_infos = {}
+		# 
 		for a_name, d_urls in level_two_urls.items():
 			pages = Pages(urls=d_urls)
 			d_matchs = {
@@ -74,7 +78,8 @@ def main(areas):
 			detail_infos = pages.get_elements_by_xpath_one(match=d_matchs)
 			
 			all_infos[a_name] = detail_infos
-
+		
+		# 将爬取的所有信息保存至本地备用
 		with open(r".\tmps\all_infos.json", "w", encoding='utf-8') as f:
 			json.dump(all_infos, f)
 		# df = pd.DataFrame(columns=["title", "areas", "towards", "floor", "elevator", "electricity", "water", "gas", "visit", "price", "pay_method", "traffic"])
@@ -85,6 +90,10 @@ def main(areas):
 		
 		# df.to_csv(r".\results.csv",encoding='utf-8',index=False)
 		
+
+		# 删除本地临时文件夹 tmp
+		if 1 == 0:
+			shutil.rmtree(r".\tmp")
 
 if __name__ == "__main__":
 
