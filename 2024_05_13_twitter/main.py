@@ -8,6 +8,7 @@ from tools import *
 import socks
 import socket
 
+'''
 #亿牛云 爬虫代理加强版 代理服务器
 proxyHost = "www.16yun.cn"
 proxyPort = "31111"
@@ -16,14 +17,12 @@ proxyPort = "31111"
 proxyUser = "16YUN"
 proxyPass = "16IP"
 
-
-
 # 构造代理服务器字典
 proxies = {
     "http": f"http://{proxyUser}:{proxyPass}@{proxyHost}:{proxyPort}",
     "https": f"https://{proxyUser}:{proxyPass}@{proxyHost}:{proxyPort}"
 }
-
+'''
 
 
 def main(username=None, user_main_url=None):
@@ -31,23 +30,25 @@ def main(username=None, user_main_url=None):
     user_info_url_ = "https://twitter.com/i/api/graphql/qW5u-DAuXpMEG0zA1F7UGQ/UserByScreenName"
     user_twitter_url_ = "https://twitter.com/i/api/graphql/9zyyd1hebl7oNWIPdA8HRw/UserTweets"
 
-    # proxies = {
-    #     "http": None,
-    #     "https": None
-    # }
-    # proxies = {
-    #     "http": f"http://72.10.164.178:8125",
-    #     "https": f"https://72.10.164.178:8125"
-    # }
-    # 设置socks代理
-    socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 32345)  # 替换为实际的代理地址和端口
 
-    # 将socket的默认代理设置为socks代理
-    socket.socket = socks.socksocket
+
+    proxies = get_json_data("./configs/proxy.json")
+    if len(proxies) > 0:
+        # https 代理
+        pass
+    else:
+        proxies = None
+        # 设置socks代理
+        socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 32345)  # 替换为实际的代理地址和端口
+        # 将socket的默认代理设置为socks代理
+        socket.socket = socks.socksocket
 
     # 构造请求头字典
     headers = get_json_data('./configs/request_headers.json')
-
+    # re = requests.get("https://twitter.com/elonmusk", headers=headers)#, proxies=proxies)
+    # print(re.status_code)
+    # print(re.text)
+    # quit()
     # 获取用户信息
     if username is not None:
         pass
@@ -64,6 +65,10 @@ def main(username=None, user_main_url=None):
     # 获取用户twitter
     user_twitter_data = get_json_data("./configs/user_twitter_data.json")
     user_twitter_data["variables"]["userId"] = user_id # 替换用户id
+    # re = requests.post(url=user_twitter_url_, json=user_twitter_data, headers=headers)
+    # print(re.status_code)
+    # print(re.text)
+    # quit()
     # 获取请求地址
     twitter_url_dict = get_url_params(user_twitter_data)
     user_twitter_url = user_twitter_url_ + str("?variables=") + str(twitter_url_dict["variables"]) + str("&features=") + str(twitter_url_dict["features"]) + str("&fieldToggles=") + str(twitter_url_dict["fieldToggles"])
