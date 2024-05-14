@@ -83,14 +83,22 @@ def get_twitter_from_response(data: json, username) -> list:
                     continue
                 if "legacy" not in item["content"]["itemContent"]["tweet_results"]["result"].keys():
                     continue
+
                 twitter_info = item["content"]["itemContent"]["tweet_results"]["result"]["legacy"]
                 text, cr_time = twitter_info["full_text"],  twitter_info["created_at"]
                 cr_time = change_time_format(cr_time)
                 twitter_url = 'https://twitter.com/' + username + str("/status/") + item["entryId"].split("tweet-")[-1].split("-")[0]
+                # print(str(twitter_info["is_quote_status"]))
+                # 判断是否转发
+                if twitter_info["is_quote_status"] is True:
+                    is_quote = "0"
+                elif twitter_info["is_quote_status"] is False:
+                    is_quote = "1"
                 one_twitter = {
                     "time": cr_time,
                     "content": text,
-                    "url": twitter_url
+                    "url": twitter_url,
+                    "is_quote": is_quote
                 }
                 all_twitters.append(one_twitter)
             except:
