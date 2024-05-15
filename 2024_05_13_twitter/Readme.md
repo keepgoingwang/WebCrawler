@@ -15,16 +15,16 @@ pip install -r requirements.txt
 ### 配置参数
 1. 用户只需要修改 configs_user 目录下的json文件
 -- user_set.json 用于配置用户信息，包括主页url, 起始日期，终止日期；
-'''json
+```json
 {
     "home_page": "https://twitter.com/pumpdotfun", 
     "start_date": "2024-03-01", # 可为空，为空时默认从用户注册日期开始
     "end_date": ""， # 可为空，为空时默认到当前日期
 }
-'''
+```
 
 -- request_headers.json 用于配置用户的cookie等信息，可从浏览器中获取；
-'''json
+```json
 {
     "authority":"twitter.com",
     "method":"GET",
@@ -53,8 +53,10 @@ pip install -r requirements.txt
     "x-twitter-client-language": "en",
     "x-connection-hash": "" # 需修改
  }
- '''
+ ```
+
 ![alt text](image.png)
+
 如何获取需要的信息：
 
 首先进入任意一个博主主页，按下F12，然后F5刷新页面，在Network中找到对应的请求，点击Headers，找到cookie和csrf-token等信息，复制到对应的json文件中
