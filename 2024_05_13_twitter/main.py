@@ -1,12 +1,14 @@
 import requests
-import json
-import urllib.parse
 import datetime
+import itertools
+import os
+import time
 
-import httpx as htt
+# import httpx as htt
 from tools import *
 import socks
 import socket
+
 
 '''
 #亿牛云 爬虫代理加强版 代理服务器
@@ -25,15 +27,15 @@ proxies = {
 '''
 
 
-def main(username=None, user_main_url=None):
-    # 基础请求url
+def main():
+    # 基础请求url, 此处若网站规则变化则需要更改, 否则不变
     user_info_url_ = "https://twitter.com/i/api/graphql/qW5u-DAuXpMEG0zA1F7UGQ/UserByScreenName"
     user_twitter_url_ = "https://twitter.com/i/api/graphql/9zyyd1hebl7oNWIPdA8HRw/UserTweets"
+    user_search_url_ = "https://twitter.com/i/api/graphql/5yhbMCF0-WQ6M8UOAs1mAg/SearchTimeline"
 
-
-
-    proxies = get_json_data("./configs/proxy.json")
-    if len(proxies) > 0:
+    # 获取代理信息
+    proxies = get_json_data("./configs_user/proxy.json")
+    if "https" in proxies.keys() and "http" in proxies.keys() and len(proxies["https"]) > 0 and len(proxies["http"]) > 0:
         # https 代理
         pass
     else:
@@ -44,49 +46,96 @@ def main(username=None, user_main_url=None):
         socket.socket = socks.socksocket
 
     # 构造请求头字典
-    headers = get_json_data('./configs/request_headers.json')
-    # re = requests.get("https://twitter.com/elonmusk", headers=headers)#, proxies=proxies)
-    # print(re.status_code)
-    # print(re.text)
-    # quit()
-    # 获取用户信息
-    if username is not None:
-        pass
-    # 构造请求体字典
-    user_info_data = get_json_data("./configs/user_info_data.json")
-    user_info_data["variables"]["screen_name"] = username # 要查询的用户名
-    info_url_dict = get_url_params(user_info_data)
-    user_info_url = user_info_url_ + str("?variables=") + str(info_url_dict["variables"]) + str("&features=") + str(info_url_dict["features"]) + str("&fieldToggles=") + str(info_url_dict["fieldToggles"])
-    # 获取用户id
-    response_user_info = get_response_data(url=user_info_url, headers=headers)#, proxies=proxies)
-    user_id = response_user_info["data"]["user"]["result"]["rest_id"]
+    headers = get_json_data('./configs_user/request_headers.json')
 
+    # 获取用户设定的信息
+    print(">>>>>>开始获取用户设置的爬取信息")
+    try:
+        user_set_data = get_json_data("./configs_user/user_set.json")
+        home_page = user_set_data["home_page"]
+        start_date = user_set_data["start_date"]
+        end_date = user_set_data["end_date"]
+        if home_page == "":
+            raise ValueError("请在configs_user/user_set.json中设置用户主页地址")
+        username = home_page.split("/")[-1]
+        print(f"用户名:{username}")
+    except Exception as e:
+        print(e)
+        print("------获取用户设置的爬取信息失败")
+
+    # 获取用户信息
+    print(">>>>>>开始获取目标的用户信息")
+    try:
+        user_info_data = get_json_data("./configs/user_info_data.json")
+        user_info_data["variables"]["screen_name"] = username # 要查询的用户名
+        info_url_dict = get_url_params(user_info_data)
+        user_info_url = user_info_url_ + str("?variables=") + str(info_url_dict["variables"]) + str("&features=") + str(info_url_dict["features"]) + str("&fieldToggles=") + str(info_url_dict["fieldToggles"])
+        # 获取用户id和创建时间
+        response_user_info = get_response_data(url=user_info_url, headers=headers, proxies=proxies)
+        user_id = response_user_info["data"]["user"]["result"]["rest_id"]
+        user_created_at = change_time_format(response_user_info["data"]["user"]["result"]["legacy"]["created_at"], '%Y-%m-%d')
+
+        # 设定查询时间范围
+        if start_date == "":
+            start_date = user_created_at
+            print(f"未设置起始日期，默认使用用户创建日期:{user_created_at}")
+        if end_date == "":
+            end_date = datetime.now().strftime('%Y-%m-%d')
+            print(f"未设置截止日期，默认使用当前日期:{end_date}")
+    except Exception as e:
+        print(e)
+        print("------获取目标用户信息失败")
+        quit()
 
     # 获取用户twitter
-    user_twitter_data = get_json_data("./configs/user_twitter_data.json")
-    user_twitter_data["variables"]["userId"] = user_id # 替换用户id
-    # re = requests.post(url=user_twitter_url_, json=user_twitter_data, headers=headers)
-    # print(re.status_code)
-    # print(re.text)
-    # quit()
+    # user_twitter_data = get_json_data("./configs/user_twitter_data.json")
+    #user_twitter_data["variables"]["userId"] = user_id # 替换用户id
     # 获取请求地址
-    twitter_url_dict = get_url_params(user_twitter_data)
-    user_twitter_url = user_twitter_url_ + str("?variables=") + str(twitter_url_dict["variables"]) + str("&features=") + str(twitter_url_dict["features"]) + str("&fieldToggles=") + str(twitter_url_dict["fieldToggles"])
+    # twitter_url_dict = get_url_params(user_twitter_data)
+    #user_twitter_url = user_twitter_url_ + str("?variables=") + str(twitter_url_dict["variables"]) + str("&features=") + str(twitter_url_dict["features"]) + str("&fieldToggles=") + str(twitter_url_dict["fieldToggles"])
+    #response_user_twitters = get_response_data(url=user_twitter_url, headers=headers)#, proxies=proxies)
     
-    '''目前获取的twitter包含转发的,并且只有20条还未获取更多'''
-    response_user_twitters = get_response_data(url=user_twitter_url, headers=headers)#, proxies=proxies)
     
-    # print("--",response_user_twitters)
-    # # client = htt.Client()
-    # response = client.post(user_info_url, headers=headers, data=user_info_data)
+    # 获取推特
+    print(">>>>>>开始获取目标用户的推文")
+    try:
+        all_witters = []
+        user_search_data = get_json_data("./configs/user_search_data.json")
+        for q in q_list_get(username=username, since=start_date, until=end_date):
+            try:
+                user_search_data["variables"]["rawQuery"] = q
+                search_url_dict = get_url_params(user_search_data)
+                user_search_url = user_search_url_ + str("?variables=") + str(search_url_dict["variables"]) + str("&features=") + str(search_url_dict["features"])
+                response_user_search = get_response_data(url=user_search_url, headers=headers, proxies=proxies)
 
-    # 打印响应结果
-    with open("./out_data/get_twitters.json", 'w', encoding='utf-8') as f:
-        json.dump(response_user_twitters, f, ensure_ascii=False, indent=4)
+                # 保存响应结果
+                # with open("./out_data/twitters.json", 'w', encoding='utf-8') as f:
+                #     json.dump(response_user_search, f, ensure_ascii=False, indent=4)
 
+                one_batch_twitters = get_twitter_from_search(data=response_user_search, username=username)
+                all_witters.append(one_batch_twitters)
+            except Exception as e:
+                print(e)
+                continue
+            
+            time.sleep(2)
 
+        all_witters_list = list(itertools.chain(*all_witters))
+    except Exception as e:
+        print(e)
+        print("------获取推文失败")
+
+    # 保存数据到文件
+    try:
+        file_path = f"./out_data/{username}_{start_date}_{end_date}_witters.xlsx"
+        if not os.path.exists("./out_data/"):
+            os.makedirs("./out_data/")
+        sava_data(data=all_witters_list, file_path=file_path)
+        print(f"保存数据到文件:{file_path}成功")
+    except Exception as e:
+        print(e)
+        print("------保存数据到文件失败")
 if __name__ == "__main__":
 
-    username = "elonmusk"
-    user_main_url = "https://twitter.com/pompdotfun"
-    main(username=username, user_main_url=user_main_url)
+    main()
+

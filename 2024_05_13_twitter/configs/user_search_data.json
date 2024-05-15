@@ -1,16 +1,13 @@
 {
     "variables": {
-        "userId": "1774032620956893184",
+        "rawQuery": "(from:elonmusk) until:2024-04-30 since:2024-04-01",
         "count": 1000,
-        "cursor":"DAABCgABGNlYUw8AJw4KAAIY2OF3qBegCggAAwAAAAIAAA",
-        "includePromotedContent": true,
-        "withQuickPromoteEligibilityTweetFields": true,
-        "withVoice": true,
-        "withV2Timeline": true
+        "querySource": "typed_query",
+        "product": "Top"
     },
     "features": {
         "rweb_tipjar_consumption_enabled": true,
-        "responsive_web_graphql_exclude_directive_enabled": false,
+        "responsive_web_graphql_exclude_directive_enabled": true,
         "verified_phone_label_enabled": false,
         "creator_subscriptions_tweet_preview_api_enabled": true,
         "responsive_web_graphql_timeline_navigation_enabled": true,
@@ -34,8 +31,5 @@
         "longform_notetweets_rich_text_read_enabled": true,
         "longform_notetweets_inline_media_enabled": true,
         "responsive_web_enhance_cards_enabled": false
-    },
-    "fieldToggles": {
-        "withArticlePlainText": false
     }
 }
