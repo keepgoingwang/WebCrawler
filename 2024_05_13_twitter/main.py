@@ -130,7 +130,7 @@ def main():
         file_path = f"./out_data/{username}_{start_date}_{end_date}_witters.xlsx"
         if not os.path.exists("./out_data/"):
             os.makedirs("./out_data/")
-        sava_data(data=all_witters_list, file_path=file_path)
+        save_data_to_excel(data=all_witters_list, file_path=file_path)
         print(f"保存数据到文件:{file_path}成功")
     except Exception as e:
         print(e)
