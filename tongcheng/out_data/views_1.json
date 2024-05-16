@@ -1,0 +1,1054 @@
+{
+    "data": {
+        "code": 0,
+        "msg": "success 0b0bf875-940f-4854-8679-d1b2c6c726f6",
+        "total": 7914,
+        "roomTypes": {
+            "filterId": "0",
+            "filterType": 0,
+            "filterName": "房型筛选",
+            "filterCount": 0,
+            "subTag": [
+                {
+                    "filterId": "-1",
+                    "filterType": 1004,
+                    "filterName": "全部房型",
+                    "filterCount": 0,
+                    "subTag": null,
+                    "polarity": 1
+                },
+                {
+                    "filterId": "963351497537751F56DB4EBA95F4FF085E8A4F4DFF09",
+                    "filterType": 1004,
+                    "filterName": "阳光男生四人间（床位）",
+                    "filterCount": 0,
+                    "subTag": null,
+                    "polarity": 1
+                },
+                {
+                    "filterId": "963351495973751F56DB4EBA95F4FF085E8A4F4DFF09",
+                    "filterType": 1004,
+                    "filterName": "阳光女生四人间（床位）",
+                    "filterCount": 0,
+                    "subTag": null,
+                    "polarity": 1
+                },
+                {
+                    "filterId": "821290027537751F516D4EBA95F400285E8A4F4D0029",
+                    "filterType": 1004,
+                    "filterName": "舒适男生六人间(床位)",
+                    "filterCount": 0,
+                    "subTag": null,
+                    "polarity": 1
+                },
+                {
+                    "filterId": "821290025973751F516D4EBA95F400285E8A4F4D0029",
+                    "filterType": 1004,
+                    "filterName": "舒适女生六人间(床位)",
+                    "filterCount": 0,
+                    "subTag": null,
+                    "polarity": 1
+                },
+                {
+                    "filterId": "8F7B59627537751F4E8C4EBA95F4FF085E8A4F4DFF09",
+                    "filterType": 1004,
+                    "filterName": "轻奢男生二人间（床位）",
+                    "filterCount": 0,
+                    "subTag": null,
+                    "polarity": 1
+                },
+                {
+                    "filterId": "8F7B59625973751F4E8C4EBA95F4FF085E8A4F4DFF09",
+                    "filterType": 1004,
+                    "filterName": "轻奢女生二人间（床位）",
+                    "filterCount": 0,
+                    "subTag": null,
+                    "polarity": 1
+                }
+            ],
+            "polarity": 1
+        },
+        "travelTypes": null,
+        "languages": null,
+        "filterList": [
+            {
+                "filterId": "-1",
+                "filterType": 1002,
+                "filterName": "全部",
+                "filterCount": 7914,
+                "subTag": [
+                    {
+                        "filterId": "1",
+                        "filterType": 1005,
+                        "filterName": "最新",
+                        "filterCount": 0,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110105",
+                        "filterType": 1002,
+                        "filterName": "前台热情",
+                        "filterCount": 716,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110029",
+                        "filterType": 1002,
+                        "filterName": "环境优雅",
+                        "filterCount": 461,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110056",
+                        "filterType": 1002,
+                        "filterName": "卫生不错",
+                        "filterCount": 500,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110057",
+                        "filterType": 1002,
+                        "filterName": "设施齐全",
+                        "filterCount": 295,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110055",
+                        "filterType": 1002,
+                        "filterName": "客房整洁",
+                        "filterCount": 303,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110001",
+                        "filterType": 1002,
+                        "filterName": "出行方便",
+                        "filterCount": 225,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110147",
+                        "filterType": 1002,
+                        "filterName": "入住体验好",
+                        "filterCount": 260,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "120043",
+                        "filterType": 1002,
+                        "filterName": "房间一般",
+                        "filterCount": 20,
+                        "subTag": null,
+                        "polarity": 0
+                    }
+                ],
+                "polarity": 1
+            },
+            {
+                "filterId": "1",
+                "filterType": 1003,
+                "filterName": "有图/视频",
+                "filterCount": 513,
+                "subTag": [
+                    {
+                        "filterId": "42",
+                        "filterType": 1003,
+                        "filterName": "有图",
+                        "filterCount": 504,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "43",
+                        "filterType": 1003,
+                        "filterName": "视频",
+                        "filterCount": 9,
+                        "subTag": null,
+                        "polarity": 1
+                    }
+                ],
+                "polarity": 1
+            },
+            {
+                "filterId": "1",
+                "filterType": 1001,
+                "filterName": "好评",
+                "filterCount": 4439,
+                "subTag": [
+                    {
+                        "filterId": "110105",
+                        "filterType": 1002,
+                        "filterName": "前台热情",
+                        "filterCount": 716,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110029",
+                        "filterType": 1002,
+                        "filterName": "环境优雅",
+                        "filterCount": 461,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110056",
+                        "filterType": 1002,
+                        "filterName": "卫生不错",
+                        "filterCount": 500,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110057",
+                        "filterType": 1002,
+                        "filterName": "设施齐全",
+                        "filterCount": 295,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110055",
+                        "filterType": 1002,
+                        "filterName": "客房整洁",
+                        "filterCount": 303,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110001",
+                        "filterType": 1002,
+                        "filterName": "出行方便",
+                        "filterCount": 225,
+                        "subTag": null,
+                        "polarity": 1
+                    },
+                    {
+                        "filterId": "110147",
+                        "filterType": 1002,
+                        "filterName": "入住体验好",
+                        "filterCount": 260,
+                        "subTag": null,
+                        "polarity": 1
+                    }
+                ],
+                "polarity": 1
+            },
+            {
+                "filterId": "-1",
+                "filterType": 1001,
+                "filterName": "待改善",
+                "filterCount": 97,
+                "subTag": [
+                    {
+                        "filterId": "120043",
+                        "filterType": 1002,
+                        "filterName": "房间一般",
+                        "filterCount": 20,
+                        "subTag": null,
+                        "polarity": 0
+                    }
+                ],
+                "polarity": 0
+            }
+        ],
+        "comments": [
+            {
+                "commentUser": {
+                    "nickName": "会员6754",
+                    "rank": 3
+                },
+                "commentId": "504254308",
+                "title": null,
+                "content": "房间很干净环境非常好 出行也方便 设施设备齐全 推荐非常好服务很热情",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1712734349000,
+                "commentExt": {
+                    "travelType": 5,
+                    "travelTypeDesc": "独自旅行",
+                    "order": {
+                        "roomTypeId": "11",
+                        "roomTypeName": "舒适女生六人间(床位)",
+                        "checkInTime": "1711900800000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "2be68706-2c69-4b34-b838-c5b42c47f168",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1sGE53ijsd2.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1sGE53ijsd2.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1sGE53ijsd2.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1sGE53ijsd2.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1sGE53ijsd2.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 504409459,
+                        "content": "尊敬的宾客：您好！非常感谢您对我们酒店如此的青睐和喜爱！迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店，前进的脚步永不停歇，为了您的信赖，我们将更加坚持不懈，迷家青年酒店永远屹立于这个城市，等候您的来临！不见不散哦！祝：笑口常开！",
+                        "user": "酒店回复",
+                        "createTime": 1712795179000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "江苏",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员1845",
+                    "rank": 3
+                },
+                "commentId": "487830703",
+                "title": null,
+                "content": "这家青旅就在我上班的附近，通勤很方便，而且就在马路边上，打车很方便可以直接到门口，住的房间也很干净，保洁大姐每天都会进房间收垃圾，打扫卫生，这家的店长是个漂亮小姐姐，对于环境跟卫生盯得很严，很尽职尽责~这才有了大家舒适的入住环境",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1707464993000,
+                "commentExt": {
+                    "travelType": 5,
+                    "travelTypeDesc": "独自旅行",
+                    "order": {
+                        "roomTypeId": "12",
+                        "roomTypeName": "舒适男生六人间(床位)",
+                        "checkInTime": "1704038400000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "b0b1bb54-90ec-4a82-9ac0-83123afeffc2",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1r3q3CSyrGo.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1r3q3CSyrGo.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1r3q3CSyrGo.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1r3q3CSyrGo.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1r3q3CSyrGo.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "87fb554a-beed-4007-9dd2-ac81617c5b6b",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1r3q3LYyViM.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1r3q3LYyViM.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1r3q3LYyViM.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1r3q3LYyViM.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1r3q3LYyViM.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "c6d09158-6514-497b-83f7-0973775c8621",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1r3q3v3rRZK.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1r3q3v3rRZK.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1r3q3v3rRZK.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1r3q3v3rRZK.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1r3q3v3rRZK.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 487892025,
+                        "content": "感谢您的用心点评，迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店我们也始终坚信用心就能做好，追求极致服务，我们愿在路上与您一同分享成长的喜悦，给您带来更多的惊喜和感动，欢迎常回家看看！",
+                        "user": "酒店回复",
+                        "createTime": 1707530779000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员8837",
+                    "rank": 3
+                },
+                "commentId": "512336480",
+                "title": null,
+                "content": "房间干净公共区域很安静 很适合休息",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1715076204000,
+                "commentExt": {
+                    "travelType": 5,
+                    "travelTypeDesc": "独自旅行",
+                    "order": {
+                        "roomTypeId": "11",
+                        "roomTypeName": "舒适女生六人间(床位)",
+                        "checkInTime": "1714492800000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "03684465-ef72-4fb1-9433-bdbb282d352e",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1tpGrnJKLRK.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1tpGrnJKLRK.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1tpGrnJKLRK.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1tpGrnJKLRK.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1tpGrnJKLRK.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 512443477,
+                        "content": "以简约的风格、温馨体贴的服务向客官展示酒店的独特魅力。客官的肯定是对酒店最大的支持和鼓励，我们会用心服务好每一位家人，期待和您的下次相遇！谢谢亲亲的好评！迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店酒店的我们力求为每位客官提供最为贴心细致的服务，为每位客官带来超值的体验。迷家青年酒店是一个富有年轻活力的酒店，",
+                        "user": "酒店回复",
+                        "createTime": 1715129689000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海市",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员8794",
+                    "rank": 3
+                },
+                "commentId": "512033046",
+                "title": null,
+                "content": "服务：前台服务很好，\n原本我起晚了，是12点退房，给我延迟了1个小时\n还可以前台行李箱寄存，服务态度超级好",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1714992365000,
+                "commentExt": {
+                    "travelType": 5,
+                    "travelTypeDesc": "独自旅行",
+                    "order": {
+                        "roomTypeId": "10",
+                        "roomTypeName": "阳光女生四人间（床位）",
+                        "checkInTime": "1714492800000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "1a9477aa-af39-41b6-8b11-8304872ca0ac",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1to1ueQRZOo.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1to1ueQRZOo.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1to1ueQRZOo.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1to1ueQRZOo.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1to1ueQRZOo.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "c44c3cd0-f9ad-4234-b41e-87d878fc8793",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1to1u6F3vIA.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1to1u6F3vIA.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1to1u6F3vIA.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1to1u6F3vIA.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1to1u6F3vIA.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 512143472,
+                        "content": "尊敬的宾客：您好！非常感谢您的入住与赞赏！很高兴能为您的出游带来美好的时光。迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店您的赞赏给予酒店很大的鼓舞，也是我们进步的动力，我们会继续保持热忱，致力让每一位宾客享有宾至如归的入住感受，热切期待您的再次光临！欢迎您再回来体验，祝生活愉快！",
+                        "user": "酒店回复",
+                        "createTime": 1715044340000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海市",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员6722",
+                    "rank": 3
+                },
+                "commentId": "493225123",
+                "title": null,
+                "content": "环境：环境很不错，干净整洁，房间空间大有帘子，公共区域很大推荐推荐\n服务：工作人员服务态度很好，有耐心很不错",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1709182526000,
+                "commentExt": {
+                    "travelType": 4,
+                    "travelTypeDesc": "商务出差",
+                    "order": {
+                        "roomTypeId": "8",
+                        "roomTypeName": "阳光男生四人间（床位）",
+                        "checkInTime": "1706716800000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "9b06264e-57b8-4439-89db-5b75dcd52c90",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1rAoV3oZ5XG.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1rAoV3oZ5XG.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rAoV3oZ5XG.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1rAoV3oZ5XG.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rAoV3oZ5XG.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 493427072,
+                        "content": "感谢您的用心点评，迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店我们也始终坚信用心就能做好，追求极致服务，我们愿在路上与您一同分享成长的喜悦，给您带来更多的惊喜和感动，欢迎常回家看看！",
+                        "user": "酒店回复",
+                        "createTime": 1709253278000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员7285",
+                    "rank": 3
+                },
+                "commentId": "491519547",
+                "title": null,
+                "content": "环境还是不错的  毕竟不是星级酒店  挺满意的，卫生方面也不错  工作人员打扫很及时，下次还会再来的",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1708588912000,
+                "commentExt": {
+                    "travelType": 4,
+                    "travelTypeDesc": "商务出差",
+                    "order": {
+                        "roomTypeId": "8",
+                        "roomTypeName": "阳光男生四人间（床位）",
+                        "checkInTime": "1706716800000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "47208cde-9d47-48e0-9a30-8bea765fd81c",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1rp9gmSZXoc.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1rp9gmSZXoc.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rp9gmSZXoc.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1rp9gmSZXoc.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rp9gmSZXoc.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "a283f03b-d115-4893-a578-21ab63a7099c",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1rp9geAEgFi.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1rp9geAEgFi.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rp9geAEgFi.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1rp9geAEgFi.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rp9geAEgFi.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "d6cc283b-465b-4dca-99c1-e2732c3ec4cd",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1rp9ghFoKcM.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1rp9ghFoKcM.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rp9ghFoKcM.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1rp9ghFoKcM.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rp9ghFoKcM.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 491679514,
+                        "content": "尊敬的宾客：您好！感谢您5分的好评哦！每个城市总会有让人惦念的理由，每个季节都有我们难舍的景色，每个酒店都有他们甜美而温馨的回忆，迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店，希望迷家青年酒店会是您回忆里最温馨最独特的那个！常回来看看哦，祝：安好！            \n3.尊敬的宾客：您",
+                        "user": "酒店回复",
+                        "createTime": 1708650127000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海市",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员9827",
+                    "rank": 3
+                },
+                "commentId": "479895736",
+                "title": null,
+                "content": "交通便利，附近吃的也很多方便。房间干净整洁，房间和淋浴间都有窗户，通风无异味，下次过来这边肯定还会住的，有需要也会推荐给朋友",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1704511054000,
+                "commentExt": {
+                    "travelType": 3,
+                    "travelTypeDesc": "团体",
+                    "order": {
+                        "roomTypeId": "8",
+                        "roomTypeName": "阳光男生四人间（床位）",
+                        "checkInTime": "1701360000000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "1a5c4321-3415-47e4-822b-01896cf60d49",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1q8FL4QvtXW.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1q8FL4QvtXW.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1q8FL4QvtXW.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1q8FL4QvtXW.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1q8FL4QvtXW.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 480077952,
+                        "content": "尊敬的宾客：您好！非常感谢您对我们酒店如此的青睐和喜爱！迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店，前进的脚步永不停歇，为了您的信赖，我们将更加坚持不懈，迷家青年酒店永远屹立于这个城市，等候您的来临！不见不散哦！祝：笑口常开！",
+                        "user": "酒店回复",
+                        "createTime": 1704587408000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员2059",
+                    "rank": 3
+                },
+                "commentId": "498680078",
+                "title": null,
+                "content": "房间很干净设施配套齐全 卫生打扫的很干净呢 环境很好推荐这家前台很热情",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1711007819000,
+                "commentExt": {
+                    "travelType": 5,
+                    "travelTypeDesc": "独自旅行",
+                    "order": {
+                        "roomTypeId": "12",
+                        "roomTypeName": "舒适男生六人间(床位)",
+                        "checkInTime": "1709222400000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "4c86a039-02f2-4abe-b469-1d42079f9c28",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1s9y1qOOIIo.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1s9y1qOOIIo.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1s9y1qOOIIo.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1s9y1qOOIIo.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1s9y1qOOIIo.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 498812683,
+                        "content": "尊敬的宾客：您好！感谢您5分的好评哦！每个城市总会有让人惦念的理由，每个季节都有我们难舍的景色，每个酒店都有他们甜美而温馨的回忆，迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店，希望迷家青年酒店会是您回忆里最温馨最独特的那个！常回来看看哦，祝：安好！",
+                        "user": "酒店回复",
+                        "createTime": 1711067913000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员8888",
+                    "rank": 3
+                },
+                "commentId": "496720405",
+                "title": null,
+                "content": "房间很干净 设施齐全 卫生干净环境非常好 前台服务很热情 位置很好",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1710381949000,
+                "commentExt": {
+                    "travelType": 5,
+                    "travelTypeDesc": "独自旅行",
+                    "order": {
+                        "roomTypeId": "8",
+                        "roomTypeName": "阳光男生四人间（床位）",
+                        "checkInTime": "1709222400000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "1895f8e7-e2f9-46cd-a51c-6e4427e75f13",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1rXryQMrvVe.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1rXryQMrvVe.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rXryQMrvVe.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1rXryQMrvVe.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rXryQMrvVe.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 496949485,
+                        "content": ".尊敬的宾客：您好！感谢您5分的好评哦！每个城市总会有让人惦念的理由，每个季节都有我们难舍的景色，每个酒店都有他们甜美而温馨的回忆，迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店，希望迷家青年酒店会是您回忆里最温馨最独特的那个！常回来看看哦，祝：安好！",
+                        "user": "酒店回复",
+                        "createTime": 1710463463000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海市",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            },
+            {
+                "commentUser": {
+                    "nickName": "会员8847",
+                    "rank": 3
+                },
+                "commentId": "495210922",
+                "title": null,
+                "content": "设施齐全 卫生非常干净酒店的环境很好前台服务很热情周到 很推荐呀",
+                "usefulCount": 0,
+                "isMarrow": 0,
+                "source": 6,
+                "createTime": 1709866435000,
+                "commentExt": {
+                    "travelType": 5,
+                    "travelTypeDesc": "独自旅行",
+                    "order": {
+                        "roomTypeId": "11",
+                        "roomTypeName": "舒适女生六人间(床位)",
+                        "checkInTime": "1709222400000"
+                    }
+                },
+                "lang": "zh-cn",
+                "images": [
+                    {
+                        "id": "4ff68023-f368-409a-b451-6c2792898dfe",
+                        "imagePaths": [
+                            {
+                                "specId": 401,
+                                "url": "https://pavo.elongstatic.com/i/DP60_60/nw_1rNxl9f1SaQ.jpg"
+                            },
+                            {
+                                "specId": 402,
+                                "url": "https://pavo.elongstatic.com/i/DP120_120/nw_1rNxl9f1SaQ.jpg"
+                            },
+                            {
+                                "specId": 403,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rNxl9f1SaQ.jpg"
+                            },
+                            {
+                                "specId": 404,
+                                "url": "https://pavo.elongstatic.com/i/DP80_80/nw_1rNxl9f1SaQ.jpg"
+                            },
+                            {
+                                "specId": 405,
+                                "url": "https://pavo.elongstatic.com/i/DP480_320/nw_1rNxl9f1SaQ.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "video": null,
+                "replys": [
+                    {
+                        "replyId": 495412044,
+                        "content": "尊敬的宾客：您好！非常感谢您对我们酒店如此的青睐和喜爱！迷家青年旅舍酒店坐落上海市闵行区吴中路668号，本青旅致力于成为受年轻消费者喜爱的时尚青旅酒店，是一家从传统青旅业走向创新型的酒店，前进的脚步永不停歇，为了您的信赖，我们将更加坚持不懈，迷家青年酒店永远屹立于这个城市，等候您的来临！不见不散哦！祝：笑口常开！",
+                        "user": "酒店回复",
+                        "createTime": 1709944251000,
+                        "ipAddress": "上海",
+                        "lang": null
+                    }
+                ],
+                "commentScore": 5.0,
+                "isDecorate": 0,
+                "ipAddress": "上海市",
+                "commentScoreDes": "超棒",
+                "contentHighLightInfos": null
+            }
+        ]
+    },
+    "errorMessage": null,
+    "errorCode": null,
+    "error": false
+}
