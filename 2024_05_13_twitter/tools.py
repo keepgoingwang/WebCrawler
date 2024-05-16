@@ -160,7 +160,7 @@ def get_twitter_from_search(data: json, username) -> list:
     return all_twitters
 
 
-def sava_data(data: list, file_path: str):
+def save_data_to_excel(data: list, file_path: str):
     """
     将数据保存为csv文件, 按照时间进行升序排序
     :param data: 数据列表, 每一个数据为字典类型
