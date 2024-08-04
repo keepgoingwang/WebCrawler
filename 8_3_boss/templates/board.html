@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <h1 style="text-align: center;">BOSS直聘广州后端招聘职位可视化展示</h1>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="js/customed.js"></script>
+    <style>
+        .chart-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .chart {
+            width: 50%;
+            height: 500px;
+        }
+        .pie-chart {
+            width: 33%;
+            height: 500px;
+        }
+        .list-container {
+            width: 100%;
+            height: 500px;
+            overflow-y: auto;
+        }
+        .h33 {
+            font-size: 18px;
+            color: '#333';
+            font-style: 'normal';
+            font-weight: 'bold';
+            font-family: '"Microsoft YaHei", Arial, Verdana, sans-serif';
+        }
+    </style>
+</head>
+<body>
+    <h3 class="h33">职位信息明细表</h3>
+    <div class="list-container" id="listContainer", slot=""></div>
+    <div class="chart-container">
+        <div class="chart" id="lineChart1"></div>
+        <div class="chart" id="lineChart2"></div>
+    </div>
+    <div class="chart-container">
+        <div class="chart" id="barChart1"></div>
+        <div class="chart" id="barChart2"></div>
+    </div>
+    <div class="chart-container">
+        <div class="pie-chart" id="pieChart1"></div>
+        <div class="pie-chart" id="pieChart2"></div>
+        <div class="pie-chart" id="pieChart3"></div>
+    </div>
+
+    <script>
+        //var myTable1 =  echarts.init(document.getElementById('listContainer'), 'customed');
+                // 创建表格元素
+        var tableContainer = document.getElementById('listContainer');
+        var table = document.createElement('table');
+        table.style.borderCollapse = 'collapse';
+        table.style.width = '100%';
+        $(function(){
+            $.ajax({
+                url:"get-json/all_data.json",
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    //var c_data = data;
+                    var headerRow = document.createElement('tr');
+                    Object.keys(data).forEach(function(key) {
+                        var th = document.createElement('th');
+                        th.style.border = '1px solid #ddd';
+                        th.style.padding = '8px';
+                        th.textContent = key;
+                        headerRow.appendChild(th);
+                    });
+                    table.appendChild(headerRow);
+                    // 创建数据行
+                    var maxLength = Math.max.apply(Math, Object.values(data).map(function(arr) {
+                        return arr.length;
+                    }));
+                    for (var i = 0; i < maxLength; i++) {
+                        var dataRow = document.createElement('tr');
+                        Object.keys(data).forEach(function(key) {
+                            var td = document.createElement('td');
+                            td.style.border = '1px solid #ddd';
+                            td.style.padding = '8px';
+                            td.textContent = data[key][i] || ''; // 如果某个单元格没有数据,则显示空字符串
+                            dataRow.appendChild(td);
+                        });
+                        table.appendChild(dataRow);
+                    }
+                    // 将表格添加到容器元素中
+                    tableContainer.appendChild(table);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+
+        // 第二排第一个图，初始化图表
+        var myChart2_1 = echarts.init(document.getElementById('lineChart1'), 'customed');
+        //获取数据
+        $(function(){
+            $.ajax({
+                url:"get-json/avg_salary_by_experience.json",
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    var option = {
+                        title: {
+                            text: '工作年限平均工资'
+                            },
+                        xAxis: {
+                            type: 'category',
+                            data: data.name
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+
+                        series: [{
+                            data: data.value,
+                            type: 'line',
+                            smooth: true
+                        }]
+                    };   
+                    myChart2_1.setOption(option);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+        
+        //第二排第二个图，初始化图表
+        var myChart2_2 = echarts.init(document.getElementById('lineChart2'), 'customed');
+        //获取数据
+        $(function(){
+            $.ajax({
+                url:"get-json/avg_salary_by_positionType.json",
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    var option = {
+                        title: {
+                            text: '编程语言平均工资'
+                            },
+                        xAxis: {
+                            type: 'category',
+                            data: data.name
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [{
+                            data: data.value,
+                            type: 'line',
+                            smooth: true
+                        }]
+                    };   
+                    myChart2_2.setOption(option);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+
+        // 第三排第一个图，初始化图表
+        var myChart3_1 = echarts.init(document.getElementById('barChart1'), 'customed');
+        //获取数据
+        $(function(){
+            $.ajax({
+                url:"get-json/avg_salary_by_education.json", //教育年限平均工资
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    var option = {
+                        title: {
+                            text: '教育年限平均工资'
+                            },
+                        xAxis: {
+                            type: 'category',
+                            data: data.name
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [{
+                            data: data.value,
+                            type: 'bar'
+                        }]
+                    };   
+                    myChart3_1.setOption(option);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+        // 第三排第二个图，初始化图表
+        var myChart3_2 = echarts.init(document.getElementById('barChart2'), 'customed');
+        //获取数据
+        $(function(){
+            $.ajax({
+                url:"get-json/avg_salary_by_workLocation.json", //工作地点平均工资
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    var option = {
+                        title: {
+                            text: '工作地点平均工资'
+                            },
+                        xAxis: {
+                            type: 'category',
+                            data: data.name
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [{
+                            data: data.value,
+                            type: 'bar'
+                        }]
+                    };   
+                    myChart3_2.setOption(option);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+        
+        //第四排第一个图，初始化图表
+        var myChart4_1 = echarts.init(document.getElementById('pieChart1'), 'customed');
+        //获取数据
+        $(function(){
+            $.ajax({
+                url:"get-json/experience.json", //工作经验岗位需求
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    var data_c = data;
+                    var option = {
+                        title: {
+                            text: '工作经验岗位需求'
+                            },
+                        series: [{
+                            type: 'pie',
+                            data: [
+                            ]
+                        }]
+                    };  
+                    for (var i = 0; i < data_c.value.length; i++) {
+                            option.series[0].data.push({
+                                value: data.value[i],
+                                name: data.name[i]
+                            });
+                        }
+                    myChart4_1.setOption(option);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+        
+        //第四排第二个图，初始化图表
+        var myChart4_2 = echarts.init(document.getElementById('pieChart2'), 'customed');
+        //获取数据
+        $(function(){
+            $.ajax({
+                url:"get-json/position_type.json", //编程语言岗位需求
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    var data_c = data;
+                    var option = {
+                        title: {
+                            text: '编程岗位需求'
+                            },
+                        series: [{
+                            type: 'pie',
+                            data: []
+                        }]
+                    };   
+                    for (var i = 0; i < data_c.value.length; i++) {
+                            option.series[0].data.push({
+                                value: data.value[i],
+                                name: data.name[i]
+                            });
+                        }
+                    myChart4_2.setOption(option);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+
+        //第四排第三个图，初始化图表
+        var myChart4_3 = echarts.init(document.getElementById('pieChart3'), 'customed');
+        //获取数据
+        $(function(){
+            $.ajax({
+                url:"get-json/work_location.json", //工作地点岗位需求
+                type:"GET",
+                dataType:"json",
+                success: function(data){
+                    var data_c = data;
+                    var option = {
+                        title: {
+                            text: '工作地点岗位需求'
+                            },
+                        series: [{
+                            type: 'pie',
+                            data: [
+                                // {value: data.value[0], name: data.name[0]},
+                                // {value: data.value[1], name: data.name[1]},
+                                // {value: data.value[2], name: data.name[2]},
+                                // {value: data.value[3], name: data.name[3]},
+                                // {value: data.value[4], name: data.name[4]},
+                                // {value: data.value[5], name: data.name[5]},
+                                // {value: data.value[6], name: data.name[6]},
+                                // {value: data.value[7], name: data.name[7]},
+                                // {value: data.value[8], name: data.name[8]},
+                                // {value: data.value[9], name: data.name[9]},
+                                // {value: data.value[10], name: data.name[10]},
+                                // {value: data.value[11], name: data.name[11]},
+                            ]
+                        }]
+                    };   
+                    for (var i = 0; i < data_c.value.length; i++) {
+                            option.series[0].data.push({
+                                value: data.value[i],
+                                name: data.name[i]
+                            });
+                        }
+                    myChart4_3.setOption(option);
+                },
+                error: function(e){
+                    alert("error")
+                }
+            })
+        });
+
+
+    </script>
+</body>
+</html>
