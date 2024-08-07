@@ -237,9 +237,18 @@
                                     position: 'top',
                                     legendHoverLink: true,
                                 },
-                            }, 
+                            },
                         } //展示数据
-                        }]
+                        }],
+                        visualMap:{
+                                type: 'continuous',
+                                calculable: true,
+                                realtime: true,
+                                orient:'vertical',
+                                align: 'auto',
+                                min: 0,//data.value.min(),
+                                max: 30000, //data.value.max(),
+                            } // 拖曳手柄显示
                     };   
                     myChart3_1.setOption(option);
                 },
@@ -325,12 +334,13 @@
                             itemStyle : { normal: {
                                 label : {
                                     show: true,
-                                    position: 'top',
+                                    position: 'outside',
+                                    formatter: '{b}:{c}', //显示标签和数值
                                     legendHoverLink: true,
                                 },
                             }, 
                         } //展示数据
-                        }]
+                        }],
                     };  
                     for (var i = 0; i < data_c.value.length; i++) {
                             option.series[0].data.push({
@@ -377,7 +387,8 @@
                             itemStyle : { normal: {
                                 label : {
                                     show: true,
-                                    position: 'top',
+                                    position: 'outside',
+                                    formatter: '{b}:{c}',
                                     legendHoverLink: true,
                                 },
                             }, 
@@ -425,36 +436,28 @@
                         },
                         series: [{
                             type: 'pie',
-                            data: [
-                                // {value: data.value[0], name: data.name[0]},
-                                // {value: data.value[1], name: data.name[1]},
-                                // {value: data.value[2], name: data.name[2]},
-                                // {value: data.value[3], name: data.name[3]},
-                                // {value: data.value[4], name: data.name[4]},
-                                // {value: data.value[5], name: data.name[5]},
-                                // {value: data.value[6], name: data.name[6]},
-                                // {value: data.value[7], name: data.name[7]},
-                                // {value: data.value[8], name: data.name[8]},
-                                // {value: data.value[9], name: data.name[9]},
-                                // {value: data.value[10], name: data.name[10]},
-                                // {value: data.value[11], name: data.name[11]},
-                            ],
+                            data: (function(){
+                                var n_data = [];
+                                for (var i = 0; i < data_c.name.length; i++) {
+                                    n_data.push({
+                                        name: data_c.name[i],
+                                        value: data_c.value[i],
+                                    })
+                                }
+                                return n_data;
+                            }
+                            )(), // 通过定义立即执行函数将数据格式化
                             itemStyle : { normal: {
                                 label : {
                                     show: true,
-                                    position: 'top',
+                                    position: 'outside',
+                                    formatter: '{b}:{c}', //显示标签{b}和数值{c}
                                     legendHoverLink: true,
                                 },
                             }, 
                         } //展示数据
                         }]
                     };   
-                    for (var i = 0; i < data_c.value.length; i++) {
-                            option.series[0].data.push({
-                                value: data.value[i],
-                                name: data.name[i]
-                            });
-                        }
                     myChart4_3.setOption(option);
                 },
                 error: function(e){
