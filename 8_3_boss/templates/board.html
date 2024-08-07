@@ -2,11 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <h1 style="text-align: center;">BOSS直聘广州后端招聘职位可视化展示</h1>
+    <!-- 设置页面标题 -->
+    <h1 style="text-align: center;">BOSS直聘广州后端招聘职位可视化展示</h1> 
+    <!-- 引入需要的js文件 -->
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="js/customed.js"></script>
-    <style>
+    <!-- CSS样式设置 -->
+    <style> 
         .chart-container {
             width: 100%;
             display: flex;
@@ -35,6 +38,7 @@
     </style>
 </head>
 <body>
+    <!-- 表名 -->
     <h3 class="h33">职位信息明细表</h3>
     <div class="list-container" id="listContainer", slot=""></div>
     <div class="chart-container">
@@ -58,6 +62,7 @@
         var table = document.createElement('table');
         table.style.borderCollapse = 'collapse';
         table.style.width = '100%';
+        // 创建表格
         $(function(){
             $.ajax({
                 url:"get-json/all_data.json",
@@ -78,6 +83,7 @@
                     var maxLength = Math.max.apply(Math, Object.values(data).map(function(arr) {
                         return arr.length;
                     }));
+                    // 填充数据
                     for (var i = 0; i < maxLength; i++) {
                         var dataRow = document.createElement('tr');
                         Object.keys(data).forEach(function(key) {
@@ -106,23 +112,36 @@
                 url:"get-json/avg_salary_by_experience.json",
                 type:"GET",
                 dataType:"json",
+                // 设置图表内容
                 success: function(data){
                     var option = {
-                        title: {
+                        title: { //设置标题
                             text: '工作年限平均工资'
                             },
-                        xAxis: {
+                        xAxis: { //设置x轴的属性
                             type: 'category',
                             data: data.name
                         },
-                        yAxis: {
+                        yAxis: { //设置y轴的属性
                             type: 'value'
+                        },
+                        tooltip:{
+                            show: true,
+                            trigger: 'axis', //item指标触发，axis轴触发
                         },
 
                         series: [{
-                            data: data.value,
-                            type: 'line',
-                            smooth: true
+                            data: data.value, //数据
+                            type: 'line', //图表类型
+                            smooth: true,
+                            itemStyle : { normal: {
+                                label : {
+                                    show: true,
+                                    position: 'top',
+                                    legendHoverLink: true,
+                                }
+                            }, 
+                        } //展示数据
                         }]
                     };   
                     myChart2_1.setOption(option);
@@ -153,10 +172,23 @@
                         yAxis: {
                             type: 'value'
                         },
+                        tooltip:{
+                            show: true,
+                            trigger: 'axis', //item指标触发，axis轴触发
+                            data: data.name
+                        },
                         series: [{
                             data: data.value,
                             type: 'line',
-                            smooth: true
+                            smooth: true,
+                            itemStyle : { normal: {
+                                label : {
+                                    show: true,
+                                    position: 'top',
+                                    legendHoverLink: true,
+                                },
+                            }, 
+                        } //展示数据
                         }]
                     };   
                     myChart2_2.setOption(option);
@@ -177,6 +209,10 @@
                 dataType:"json",
                 success: function(data){
                     var option = {
+                        legend:{
+                            show: true,
+                            data: data.name
+                        },
                         title: {
                             text: '教育年限平均工资'
                             },
@@ -187,9 +223,22 @@
                         yAxis: {
                             type: 'value'
                         },
+                        tooltip:{
+                            show: true,
+                            trigger: 'axis', //item指标触发，axis轴触发
+                        },
                         series: [{
+                            name: data.name,
                             data: data.value,
-                            type: 'bar'
+                            type: 'bar',
+                            itemStyle : { normal: {
+                                label : {
+                                    show: true,
+                                    position: 'top',
+                                    legendHoverLink: true,
+                                },
+                            }, 
+                        } //展示数据
                         }]
                     };   
                     myChart3_1.setOption(option);
@@ -219,9 +268,21 @@
                         yAxis: {
                             type: 'value'
                         },
+                        tooltip:{
+                            show: true,
+                            trigger: 'axis', //item指标触发，axis轴触发
+                        },
                         series: [{
                             data: data.value,
-                            type: 'bar'
+                            type: 'bar',
+                            itemStyle : { normal: {
+                                label : {
+                                    show: true,
+                                    position: 'top',
+                                    legendHoverLink: true,
+                                },
+                            }, 
+                        } //展示数据
                         }]
                     };   
                     myChart3_2.setOption(option);
@@ -243,13 +304,32 @@
                 success: function(data){
                     var data_c = data;
                     var option = {
+                        legend:{
+                            show: true,
+                            data: data.name,
+                            right:"right",
+                            type:"scroll",
+                            orient:"vertical"
+                        },
                         title: {
                             text: '工作经验岗位需求'
                             },
+                        tooltip:{
+                            show: true,
+                            trigger: 'item', //item指标触发，axis轴触发
+                        },
                         series: [{
                             type: 'pie',
                             data: [
-                            ]
+                            ],
+                            itemStyle : { normal: {
+                                label : {
+                                    show: true,
+                                    position: 'top',
+                                    legendHoverLink: true,
+                                },
+                            }, 
+                        } //展示数据
                         }]
                     };  
                     for (var i = 0; i < data_c.value.length; i++) {
@@ -277,12 +357,31 @@
                 success: function(data){
                     var data_c = data;
                     var option = {
+                        legend:{
+                            show: true,
+                            data: data.name,
+                            right:"right",
+                            type:"scroll",
+                            orient:"vertical"
+                        },
                         title: {
                             text: '编程岗位需求'
                             },
+                        tooltip:{
+                            show: true,
+                            trigger: 'item', //item指标触发，axis轴触发
+                        },
                         series: [{
                             type: 'pie',
-                            data: []
+                            data: [],
+                            itemStyle : { normal: {
+                                label : {
+                                    show: true,
+                                    position: 'top',
+                                    legendHoverLink: true,
+                                },
+                            }, 
+                        } //展示数据
                         }]
                     };   
                     for (var i = 0; i < data_c.value.length; i++) {
@@ -310,9 +409,20 @@
                 success: function(data){
                     var data_c = data;
                     var option = {
+                        legend:{
+                            show: true,
+                            data: data.name,
+                            right:"right",
+                            type:"scroll",
+                            orient:"vertical"
+                        },
                         title: {
                             text: '工作地点岗位需求'
                             },
+                        tooltip:{
+                            show: true,
+                            trigger: 'item', //item指标触发，axis轴触发
+                        },
                         series: [{
                             type: 'pie',
                             data: [
@@ -328,7 +438,15 @@
                                 // {value: data.value[9], name: data.name[9]},
                                 // {value: data.value[10], name: data.name[10]},
                                 // {value: data.value[11], name: data.name[11]},
-                            ]
+                            ],
+                            itemStyle : { normal: {
+                                label : {
+                                    show: true,
+                                    position: 'top',
+                                    legendHoverLink: true,
+                                },
+                            }, 
+                        } //展示数据
                         }]
                     };   
                     for (var i = 0; i < data_c.value.length; i++) {
