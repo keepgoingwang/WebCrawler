@@ -1,6 +1,5 @@
 import os
 import logging
-
 import json
 
 import hashlib
@@ -10,7 +9,6 @@ from Crypto.Util.Padding import pad, unpad
 from binascii import b2a_hex, a2b_hex
 
 import pandas as pd
-
 
 
 class FilesUtils():
@@ -90,7 +88,6 @@ class EncryptDecryptUtils():
     """
     def __init__(self):
         self.one = None
-
 
     @staticmethod
     def md5_encrypt(text):
