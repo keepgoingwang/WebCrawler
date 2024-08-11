@@ -13,7 +13,7 @@ import pandas as pd
 
 
 
-class FilesUtil():
+class FilesUtils():
     """
     用来进行文件操作的工具类
     """
@@ -55,25 +55,36 @@ class FilesUtil():
         """
         try:
             if file_path.endswith('.json'):
+                if isinstance(data, str):
+                    try:
+                        data = json.loads(data)
+                    except:
+                        raise ValueError("json数据格式错误,请检查数据格式")
                 with open(file_path, 'w', encoding='utf-8') as f:
                     json.dump(data, f, ensure_ascii=False)
+            
             elif file_path.endswith('.txt') or file_path.endswith('.log') or file_path.endswith('.md') or file_path.endswith('.html'):
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(data)
-            elif file_path.endswith('.csv'):
-                data.to_csv(file_path, index=False)
-            elif file_path.endswith('.xls') or file_path.endswith('.xlsx'):
-                data.to_excel(file_path, index=False)
+            
+            elif file_path.endswith('.csv') or file_path.endswith('.xls') or file_path.endswith('.xlsx'):
+                if isinstance(data, dict):
+                    try:
+                        data = pd.DataFrame(data, index=[0])
+                    except:
+                        raise ValueError("csv数据格式错误,请检查数据格式")
+                if file_path.endswith('.csv'):
+                    data.to_csv(file_path, index=False)
+                else:
+                    data.to_excel(file_path, index=False)
             else:
                 raise ValueError("不支持的文件类型,请检查文件后缀:仅支持json、txt、csv、xls、xlsx、log、md、html")
         except Exception as e:
-            logging.error("写入json文件出错：%s" % e)
+            logging.error("写入文件出错：%s" % e)
             return None
         
 
-
-
-class EncryptDecryptUtil():
+class EncryptDecryptUtils():
     """
     用来进行加密解密的工具类
     """
